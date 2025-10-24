@@ -1,198 +1,463 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Best AC Lodge - Bhavani, Erode</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ajay Arjun Productions — Mylanchi (இசை வெளியீடு) | Dr. Arjunan</title>
+  <meta name="description" content="Ajay Arjun Productions — Producer: Dr. Arjunan (Rajapalayam). Introducing new talents, film production, distribution & audio launches. Mylanchi (Music by Ilaiyaraaja). Contact: +91 87600 33444 (WhatsApp)." />
+
+  <!-- Simple reset + fonts -->
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #333;
+    :root{
+      --accent:#0b6efd;
+      --accent-dark:#094bb5;
+      --muted:#666;
+      --bg:#ffffff;
+      --card:#fcfcff;
+      --maxw:1100px;
+      --radius:12px;
+      --shadow: 0 6px 20px rgba(10,10,20,0.08);
+      --tamil-font: "Noto Sans Tamil", sans-serif;
+      --eng-font: "Segoe UI", Roboto, Arial, sans-serif;
     }
-    header {
-      background: #003366;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--eng-font);
+      background: linear-gradient(180deg,#fbfbff 0%, #ffffff 40%);
+      color:#111;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
     }
-    header img {
-      width: 120px;
-      border-radius: 50%;
-      margin-top: 10px;
+    a{color:var(--accent); text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{max-width:var(--maxw); margin:30px auto; padding:20px}
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:18px;
     }
-    nav {
-      background: #0055a5;
-      padding: 10px;
-      text-align: center;
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
     }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
+    .logo {
+      width:76px; height:76px; border-radius:10px; overflow:hidden;
+      background:linear-gradient(135deg,#0b6efd, #0b86ff);
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:var(--shadow);
     }
-    section {
-      padding: 40px 60px;
+    .logo span{color:white; font-weight:700; font-size:20px}
+    h1.site-title{margin:0; font-size:20px}
+    .lang-switch {
+      display:flex;
+      gap:8px;
+      align-items:center;
     }
-    h2 {
-      color: #003366;
-      margin-bottom: 20px;
+    .btn {
+      padding:10px 14px; border-radius:10px; background:var(--accent);
+      color:white; border:0; cursor:pointer; font-weight:600;
+      box-shadow: 0 6px 18px rgba(11,110,253,0.18);
     }
-    .gallery img {
-      width: 280px;
-      margin: 10px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    nav {display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
+    nav a{padding:8px 12px; background:#f6f7ff; border-radius:8px; color:#0d1a33; font-weight:600}
+    .hero{
+      display:grid; grid-template-columns:1fr 420px; gap:20px; align-items:center;
+      margin:20px 0 32px; padding:20px; background:var(--card); border-radius:14px; box-shadow:var(--shadow);
     }
-    .facilities ul {
-      list-style: none;
-      padding: 0;
+    .hero .lead{font-size:18px; color:#0d2540}
+    .hero h2{margin:6px 0 12px; font-size:28px}
+    .badge{display:inline-block; padding:6px 10px; border-radius:20px; background:#fff0f6; color:#b0003a; font-weight:700}
+    .grid-two{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    .card{background:white; padding:16px; border-radius:12px; box-shadow:0 6px 20px rgba(12,20,40,0.05)}
+    .muted{color:var(--muted); font-size:14px}
+
+    /* Media / gallery */
+    .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
+    .gallery .photo{overflow:hidden; border-radius:10px; height:160px; background:#eee}
+    .gallery .photo img{width:100%; height:100%; object-fit:cover}
+
+    /* About & long content */
+    article.long{padding:16px; background:white; border-radius:12px; box-shadow:var(--shadow)}
+    article.long h3{margin-top:0}
+    /* Audio embed */
+    .video-grid{display:grid; grid-template-columns:1fr; gap:16px}
+    iframe{width:100%; min-height:300px; border-radius:10px; border:0; box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+
+    /* contact */
+    .contact-panel{display:flex; gap:14px; align-items:center; justify-content:space-between;}
+    .whatsapp{
+      display:inline-flex; gap:10px; align-items:center; padding:12px 14px; border-radius:10px; background: #25D366; color:white; font-weight:700;
+      box-shadow: 0 8px 18px rgba(37,211,102,0.18);
     }
-    .facilities ul li::before {
-      content: "✔ ";
-      color: green;
+    footer{margin-top:30px; text-align:center; color:var(--muted); font-size:14px}
+
+    /* Tamil typography (will apply when Tamil mode enabled) */
+    .tamil {font-family: var(--tamil-font), sans-serif; letter-spacing:0.2px}
+    /* Responsive */
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr; padding:14px}
+      .gallery{grid-template-columns:repeat(2,1fr)}
     }
-    .contact {
-      background: #003366;
-      color: #fff;
-      padding: 30px;
+    @media (max-width:520px){
+      .gallery{grid-template-columns:1fr}
+      nav{display:none}
+      header{flex-direction:column; align-items:flex-start}
+      .contact-panel{flex-direction:column; align-items:flex-start; gap:12px}
     }
-    form {
-      display: grid;
-      grid-gap: 15px;
-      max-width: 500px;
-    }
-    form input, form textarea, form button {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    form button {
-      background: #0055a5;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-    footer {
-      background: #002244;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-    }
+
+    /* subtle footer credits */
+    .credit{font-size:12px; color:var(--muted)}
   </style>
 </head>
 <body>
+  <div class="container" id="pageRoot">
+    <header>
+      <div class="brand" role="banner">
+        <div class="logo" aria-hidden="true"><span>AA</span></div>
+        <div>
+          <h1 class="site-title">Ajay Arjun Productions</h1>
+          <div class="muted">Producer: Dr. Arjunan — Rajapalayam, Tamil Nadu</div>
+        </div>
+      </div>
 
-<header>
-  <h1>Best AC Lodge, Bhavani - Erode</h1>
-  <p>Welcome to comfort, convenience and hospitality</p>
-  <img src="https://i.ibb.co/2f9QRBM/12-8-2.jpg" alt="Chairman Mr.M.Dhanashanmugamani">
-  <h3>Chairman: Mr. M. Dhanashanmugamani</h3>
-</header>
+      <div style="display:flex;gap:12px;align-items:center">
+        <nav aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#mylanchi">Mylanchi</a>
+          <a href="#music">Music</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#facilities">Facilities</a>
-  <a href="#policies">Policies</a>
-  <a href="#booking">Booking</a>
-  <a href="#contact">Contact</a>
-</nav>
+        <div class="lang-switch" role="toolbar" aria-label="Language switch">
+          <button id="engBtn" class="btn" onclick="setLang('en')">English</button>
+          <button id="tamBtn" style="background:#f5f5f5;color:#222;border-radius:10px;padding:10px 12px;border:1px solid #eee" onclick="setLang('ta')">தமிழ்</button>
+        </div>
+      </div>
+    </header>
 
-<section id="about">
-  <h2>About Us</h2>
-  <p>
-    Best AC Lodge is located at 289, Old Bus Stand Road, Bhavani, Erode District – 638 301. 
-    Just a few minutes away from the historic Sangameshwarar Temple, our lodge offers the perfect blend of tradition and modern comfort.
-  </p>
-  <p>
-    We offer well-furnished rooms with attached bathrooms, hot and cold water, television, ample parking facilities, and complimentary Wi-Fi. 
-    For special occasions, we provide catering facilities and a spacious Thirumana Hall for weddings and family gatherings.
-  </p>
-</section>
+    <!-- HERO -->
+    <section id="home" class="hero" aria-labelledby="heroTitle">
+      <div>
+        <span class="badge" id="statusBadge">New Release: Mylanchi — Audio Launch</span>
+        <h2 id="heroTitle">Ajay Arjun Productions — Crafting meaningful cinema, introducing new talents</h2>
+        <p class="lead" id="heroLead">
+          Ajay Arjun Productions (under the stewardship of Dr. Arjunan from Rajapalayam) focuses on feature films, music albums, and launching new artists to Tamil cinema. We believe in soulful music, strong storytelling, and nurturing fresh talent.
+        </p>
 
-<section id="gallery" class="gallery">
-  <h2>Photo Gallery</h2>
-  <img src="https://i.ibb.co/zHr46hSD/1000443105.jpg" alt="Lodge Photo">
-  <img src="https://i.ibb.co/FTJnsQB/1000443114.jpg" alt="Lodge Photo">
-  <img src="https://i.ibb.co/hJQswgsM/1000443117.jpg" alt="Lodge Photo">
-  <img src="https://i.ibb.co/Vc1zhv1j/1000443120.jpg" alt="Lodge Photo">
-  <img src="https://i.ibb.co/35hZQgWH/1000443123.jpg" alt="Lodge Photo">
-  <img src="https://i.ibb.co/v6qpWQkV/1000443126.jpg" alt="Lodge Photo">
-  <img src="https://i.ibb.co/jPhRJwFr/1000443129.jpg" alt="Lodge Photo">
-  <img src="https://i.ibb.co/0pcmZVx7/1000443132.jpg" alt="Lodge Photo">
-  <img src="https://i.ibb.co/LXjmncsc/1000443135.jpg" alt="Lodge Photo">
-  <img src="https://i.ibb.co/RGtgNT1T/1000443138.jpg" alt="Lodge Photo">
-  <img src="https://i.ibb.co/TxW49GK9/1000443141.jpg" alt="Lodge Photo">
-  <img src="https://i.ibb.co/TB7yfbF4/1000443108.jpg" alt="Lodge Photo">
-  <img src="https://i.ibb.co/KjZyS6ck/1000443111.jpg" alt="Lodge Photo">
-  <img src="https://i.ibb.co/rRrQ6Y2V/1000443144.jpg" alt="Lodge Photo">
-  <img src="https://i.ibb.co/Tqdj8g86/1000443147.jpg" alt="Lodge Photo">
-</section>
+        <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
+          <a class="btn" href="#mylanchi">Explore Mylanchi</a>
+          <a class="btn" href="#contact" style="background:#222">Contact Producer</a>
+        </div>
 
-<section id="facilities" class="facilities">
-  <h2>Facilities</h2>
-  <ul>
-    <li>Spacious rooms with attached bathrooms</li>
-    <li>Hot and cold water available</li>
-    <li>Television in every room</li>
-    <li>Free Wi-Fi access</li>
-    <li>Ample parking space</li>
-    <li>Catering facilities for events</li>
-    <li>Thirumana Hall for weddings & family gatherings</li>
-    <li>Nearby Sangameshwarar Temple for spiritual visits</li>
-  </ul>
-</section>
+        <div style="margin-top:16px" class="muted">
+          WhatsApp direct line: <strong>+91 87600 33444</strong> — Click to message.
+          <br /><small>Producer is open to new talent submissions & co-productions.</small>
+        </div>
+      </div>
 
-<section id="policies">
-  <h2>Our Policies</h2>
-  <p>
-    At Best AC Lodge, we ensure a safe, hygienic and family-friendly atmosphere. Smoking and drinking are strictly prohibited inside the premises.
-  </p>
-</section>
+      <div style="text-align:center">
+        <!-- poster placeholder -->
+        <div style="border-radius:12px; overflow:hidden; box-shadow:var(--shadow)">
+          <img src="images/mylanchi-poster.jpg" alt="Mylanchi poster - Ajay Arjun Productions" />
+        </div>
+        <div style="margin-top:10px" class="muted">Mylanchi — Audio Launch & Teaser (watch below)</div>
+      </div>
+    </section>
 
-<section id="booking">
-  <h2>Booking Form</h2>
-  <form id="bookingForm">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="email" id="email" placeholder="Your Email" required>
-    <input type="tel" id="phone" placeholder="Your Phone" required>
-    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="button" onclick="sendWhatsApp()">Send via WhatsApp</button>
-  </form>
-</section>
+    <!-- ABOUT -->
+    <section id="about" style="margin-top:18px">
+      <div class="grid-two">
+        <div class="card">
+          <h3>About Ajay Arjun Productions</h3>
+          <p>
+            Ajay Arjun Productions is an independent Tamil film production house dedicated to producing quality cinema rooted in Tamil culture and modern storytelling.
+            Our focus is on:
+          </p>
+          <ul>
+            <li>Producing feature films with strong scripts and artistic visions.</li>
+            <li>Discovering and introducing new acting, music and technical talent to Tamil cinema.</li>
+            <li>Collaborating with established directors & composers to deliver memorable cinematic experiences.</li>
+            <li>Organising audio launches, publicity events, and music promotions on digital platforms.</li>
+          </ul>
+          <p class="muted">Located in Rajapalayam, Jeyaraj Arjun productions works across Chennai & Tamil Nadu for shoots and post-production.</p>
+        </div>
 
-<section id="contact" class="contact">
-  <h2>Contact Us</h2>
-  <p><strong>Address:</strong> 289, Old Bus Stand Road, Bhavani, Erode District – 638 301</p>
-  <p><strong>Phone:</strong> <a href="tel:+916380180986" style="color:#fff;">+91 63801 80986</a></p>
-  <p><strong>WhatsApp:</strong> <a href="https://wa.me/916380180986" style="color:#fff;">Chat with us</a></p>
-  <iframe src="https://www.google.com/maps?q=289+Old+Bus+Stand+Road,+Bhavani,+Erode+District&output=embed" width="100%" height="300" style="border:0;"></iframe>
-</section>
+        <div class="card">
+          <h3 id="producer-title">Producer — Dr. Arjunan (Rajapalayam)</h3>
+          <p>
+            <strong>Dr. Arjunan</strong> is the driving force behind Ajay Arjun Productions. A producer with deep ties to Rajapalayam district, he is committed to producing films that balance artistic merit with audience accessibility.
+          </p>
+          <p>
+            Dr. Arjunan's mission:
+          </p>
+          <ol>
+            <li>Introduce and mentor new actors, musicians and technicians from Tamil Nadu.</li>
+            <li>Back films with strong musical identity — believing music elevates storytelling.</li>
+            <li>Bring together veteran artists and upcoming talent to create films with heart.</li>
+          </ol>
+          <p class="muted">To contact Dr. Arjunan directly via WhatsApp: <a href="https://wa.me/918760033444" target="_blank" rel="noopener noreferrer">+91 87600 33444</a></p>
+        </div>
+      </div>
 
-<footer>
-  <p>© 2025 Best AC Lodge, Bhavani. All Rights Reserved.</p>
-</footer>
+      <div style="margin-top:18px" class="card long">
+        <h3>Production Philosophy (detailed)</h3>
+        <p>
+          Ajay Arjun Productions believes in the craft of filmmaking across these pillars:
+        </p>
+        <ul>
+          <li><strong>Script-first approach:</strong> Financing creative stories, not just stars.</li>
+          <li><strong>Music as narrative:</strong> Collaborating with composers to make songs that drive emotion and story.</li>
+          <li><strong>Talent incubation:</strong> Casting talented newcomers, offering workshops, and pairing them with experienced crew.</li>
+          <li><strong>Regional authenticity:</strong> Making films that honour Tamil cultural landscapes while appealing to wider audiences.</li>
+        </ul>
 
-<script>
-function sendWhatsApp() {
-  var name = document.getElementById('name').value;
-  var email = document.getElementById('email').value;
-  var phone = document.getElementById('phone').value;
-  var message = document.getElementById('message').value;
+        <p>
+          If you are a director, musician, cinematographer, or actor who wants mentorship and production support, please reach out through WhatsApp or the contact form below. Shortlisted talents will be invited for auditions and portfolio reviews.
+        </p>
+      </div>
+    </section>
 
-  var url = "https://wa.me/916380180986?text=" 
-            + "Name: " + name + "%0a"
-            + "Email: " + email + "%0a"
-            + "Phone: " + phone + "%0a"
-            + "Message: " + message;
+    <!-- MYLANCHI (movie section) -->
+    <section id="mylanchi" style="margin-top:22px">
+      <div class="card">
+        <h2>Mylanchi — (மயிலாஞ்சி) <small style="font-size:14px;color:var(--muted)">Directed by Ajayan Bala</small></h2>
+        <p class="muted">A project by Ajay Arjun Productions. Lead: Sriram. Music: Isaignani Ilaiyaraaja. Cinematography: Chezhiyan.</p>
 
-  window.open(url, '_blank').focus();
-}
-</script>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px">
+          <div style="flex:1 1 420px" class="card">
+            <h3>Film Credits (selected)</h3>
+            <ul>
+              <li><strong>Title:</strong> Mylanchi (மயிலாஞ்சி)</li>
+              <li><strong>Producer:</strong> Dr. Arjunan — Ajay Arjun Productions</li>
+              <li><strong>Director:</strong> Ajayan Bala</li>
+              <li><strong>Hero:</strong> Sriram</li>
+              <li><strong>Music:</strong> Isaignani Ilaiyaraaja</li>
+              <li><strong>Cinematography:</strong> Chezhiyan</li>
+            </ul>
+            <p class="muted">Music rights & audio launch were published online — players below include the official audio-launch and the teaser/teaser-audio items hosted on YouTube.</p>
+          </div>
+
+          <div style="flex:1 1 320px" class="card">
+            <h3>Synopsis (short)</h3>
+            <p>
+              Mylanchi is a story rooted in rural Tamil life balanced with a modern sensibility and deep musical themes.
+              (Public synopsis: the film weaves generational relationships, music and the landscape into an emotionally resonant narrative.)
+            </p>
+            <p class="muted">For detailed press kit & screening dates contact the production team via WhatsApp.</p>
+          </div>
+        </div>
+
+        <hr style="margin:18px 0">
+
+        <h3 id="music">Audio Launch & Teaser (YouTube)</h3>
+        <p class="muted">
+          Embedded below are YouTube videos of the audio launch and the film teaser / audio excerpts as published online.
+        </p>
+
+        <div class="video-grid">
+          <!-- Official/live audio launch (found online) -->
+          <div class="card">
+            <h4>Official Audio Launch — LIVE / Recorded</h4>
+            <!-- Using one of the YouTube results (audio launch). -->
+            <iframe src="https://www.youtube.com/embed/sMmrStTwbmw" title="Mylanchi Audio Launch" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="muted">Source: YouTube — Mylanchi audio launch. (Embedded link discovered from public YouTube search results.)</p>
+          </div>
+
+          <div class="card">
+            <h4>Teaser / Promotional (Teaser / Audio Clips)</h4>
+            <iframe src="https://www.youtube.com/embed/r-c5ooWEBss" title="Mylanchi Teaser" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="muted">Source: YouTube — Teaser / promotional materials published by Ajay Arjun Production channels and partners.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:18px" class="card">
+          <h4>Music Director — Isaignani Ilaiyaraaja (இசைஞானி இளையராஜா)</h4>
+          <p>
+            Ilaiyaraaja (widely known as "Isaignani") is one of India’s most celebrated film composers and orchestral arrangers. For decades he brought a unique blend of Carnatic, folk and western classical elements to Tamil cinema — creating signature songs and background scores that transform scenes into memory.
+          </p>
+          <p class="muted">Reference: Ilaiyaraaja's public biography and discography (widely available including major references). 1</p>
+
+          <h4 style="margin-top:12px">Cinematographer — Chezhiyan</h4>
+          <p>
+            Chezhiyan is an award-winning director of photography known for his sensitive, naturalistic visuals in films such as <em>Paradesi</em> and other acclaimed Tamil films. His work emphasizes texture, rural landscapes, natural light and human faces — making him a strong visual collaborator for films rooted in place and people.
+          </p>
+          <p class="muted">Reference: Chezhiyan's profile and film credits. 2</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" style="margin-top:26px">
+      <h3>Gallery — Event Photos</h3>
+      <p class="muted">Photos from the audio launch and promotional events. Replace these sample filenames with the images you uploaded to <code>/images/</code>.</p>
+
+      <div class="gallery" aria-live="polite">
+        <div class="photo card"><img src="images/photo1.jpg" alt="Audio launch group photo 1"></div>
+        <div class="photo card"><img src="images/photo2.jpg" alt="Audio launch group photo 2"></div>
+        <div class="photo card"><img src="images/photo3.jpg" alt="Audio launch group photo 3"></div>
+        <div class="photo card"><img src="images/photo4.jpg" alt="Mylanchi portrait 1"></div>
+        <div class="photo card"><img src="images/photo5.jpg" alt="Mylanchi portrait 2"></div>
+        <div class="photo card"><img src="images/photo6.jpg" alt="Stage photo"></div>
+      </div>
+    </section>
+
+    <!-- TEAM & CREW (detailed) -->
+    <section id="team" style="margin-top:26px">
+      <h3>Key Crew & Notes</h3>
+      <div class="grid-two" style="margin-top:12px">
+        <div class="card">
+          <h4>Music: Isaignani Ilaiyaraaja</h4>
+          <p>
+            A master composer whose work spans decades, Ilaiyaraaja's music elevates the emotional core of Mylanchi. Expect orchestral richness, folk inflections and songs that thread through the film’s narrative.
+          </p>
+          <p class="muted">Ilaiyaraaja is often referred to as "Isaignani" (musical sage) and has a celebrated career in Indian film music. 3</p>
+        </div>
+
+        <div class="card">
+          <h4>Cinematography: Chezhiyan</h4>
+          <p>
+            Chezhiyan's approach is documentary-like realism combined with beautiful composition. His cinematography will emphasize landscapes, authentic lighting and intimate framing of performers to preserve the film's authenticity.
+          </p>
+          <p class="muted">Chezhiyan has been praised across critics for naturalistic visuals and award-winning photography. 4</p>
+        </div>
+      </div>
+
+      <div style="margin-top:14px" class="card">
+        <h4>Casting & New Talent Initiative</h4>
+        <p>
+          Ajay Arjun Productions is actively scouting new actors, singers, lyricists and technicians. The production organizes auditions and portfolio reviews; selected candidates receive mentorship and opportunities on set.
+        </p>
+        <p class="muted">Send a short video reel / portfolio via WhatsApp: <a href="https://wa.me/918760033444" target="_blank" rel="noopener noreferrer">+91 87600 33444</a></p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="margin-top:28px">
+      <div class="card">
+        <h3>Contact Ajay Arjun Productions</h3>
+        <div class="contact-panel">
+          <div>
+            <p><strong>Producer / Production Office</strong><br>Dr. Arjunan — Ajay Arjun Productions<br>Rajapalayam, Tamil Nadu</p>
+            <p class="muted">Direct WhatsApp: <a href="https://wa.me/918760033444" target="_blank" rel="noopener noreferrer" class="whatsapp">Message +91 87600 33444</a></p>
+            <p class="muted">For business & collaboration inquiries: Please include project brief / reel / budget estimate when contacting.</p>
+          </div>
+
+          <div style="max-width:420px">
+            <form id="contactForm" onsubmit="handleForm(event)" aria-label="Contact form">
+              <div style="display:flex;gap:8px;margin-bottom:8px">
+                <input id="name" name="name" placeholder="Your name" required style="flex:1;padding:10px;border-radius:8px;border:1px solid #eee" />
+                <input id="phone" name="phone" placeholder="Phone (with country code)" style="width:170px;padding:10px;border-radius:8px;border:1px solid #eee" />
+              </div>
+              <div style="margin-bottom:8px">
+                <input id="email" name="email" type="email" placeholder="Email" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee" />
+              </div>
+              <div style="margin-bottom:8px">
+                <textarea id="message" name="message" rows="4" placeholder="Brief message / portfolio / project link" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee"></textarea>
+              </div>
+              <div style="display:flex;gap:8px">
+                <button type="submit" class="btn">Send Message</button>
+                <a class="btn" href="https://wa.me/918760033444" target="_blank" rel="noopener noreferrer" style="background:#25D366">Message on WhatsApp</a>
+              </div>
+              <div id="formStatus" style="margin-top:10px;font-size:14px;color:var(--muted)"></div>
+            </form>
+            <small class="muted">Note: This form is static — configure form submission to your email/hosting provider (instructions below).</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer style="margin-top:26px">
+      <div class="credit">© Ajay Arjun Productions — Producer: Dr. Arjunan • Rajapalayam, Tamil Nadu</div>
+      <div class="credit" style="margin-top:6px">Site created for promotional use. Images and media are event photos and promotional materials.</div>
+    </footer>
+  </div>
+
+  <!-- Scripts: language toggle + simple form handler -->
+  <script>
+    // Basic bilingual content storage
+    const copy = {
+      en: {
+        siteTitle: "Ajay Arjun Productions",
+        heroTitle: "Ajay Arjun Productions — Crafting meaningful cinema, introducing new talents",
+        heroLead: "Ajay Arjun Productions (under the stewardship of Dr. Arjunan from Rajapalayam) focuses on feature films, music albums, and launching new artists to Tamil cinema. We believe in soulful music, strong storytelling, and nurturing fresh talent.",
+        aboutHeading: "About Ajay Arjun Productions",
+        contactNote: "Direct WhatsApp: +91 87600 33444"
+      },
+      ta: {
+        siteTitle: "அஜய் அர்ஜுன் புரொடக்ஷன்ஸ்",
+        heroTitle: "அஜய் அர்ஜுன் புரொடக்ஷன்ஸ் — தரமான சினிமாவிற்கு, புதிய திறமைகளை அறிமுகப்படுத்துதல்",
+        heroLead: "அஜய் அர்ஜுன் புரொடக்ஷன்ஸ் (தலைமை: டாக்டர் அர்ஜுன் — ராஜபாளையம்) முக்கியமாக வசவிகள், இசை வெளியீடுகள் மற்றும் புதிய கலைஞர்களை தமிழ் சினிமாவுக்கு அறிமுகப்படுத்துவதில் கவனம் செலுத்துகிறது. நாங்கள் உள்ளார்ந்த இசையும், பலமான கதைக்களமும், மற்றும் திறமைகளை வளர்ப்பதில் நம்பிக்கை வைக்கிறோம்.",
+        aboutHeading: "அஜய் அர்ஜுன் புரொடக்ஷன்ஸ் பற்றி",
+        contactNote: "நேரடி WhatsApp: +91 87600 33444"
+      }
+    };
+
+    function setLang(lang){
+      const root = document.getElementById('pageRoot');
+      if(lang === 'ta'){
+        // apply tamil font class and replace short copy pieces
+        root.classList.add('tamil');
+        document.getElementById('heroTitle').textContent = copy.ta.heroTitle;
+        document.getElementById('heroLead').textContent = copy.ta.heroLead;
+        document.getElementById('producer-title').textContent = "தயாரிப்பாளர் — டாக்டர் அர்ஜுன் (ராஜபாளையம்)";
+        document.getElementById('statusBadge').textContent = "புதிய வெளியீடு: மயிலாஞ்சி — இசை வெளியீடு";
+        // small contact text
+        document.querySelectorAll('.muted').forEach(m => m.style.fontFamily = "var(--tamil-font), sans-serif");
+      } else {
+        root.classList.remove('tamil');
+        document.getElementById('heroTitle').textContent = copy.en.heroTitle;
+        document.getElementById('heroLead').textContent = copy.en.heroLead;
+        document.getElementById('producer-title').textContent = "Producer — Dr. Arjunan (Rajapalayam)";
+        document.getElementById('statusBadge').textContent = "New Release: Mylanchi — Audio Launch";
+        document.querySelectorAll('.muted').forEach(m => m.style.fontFamily = "");
+      }
+    }
+
+    // default language: English
+    setLang('en');
+
+    // Basic form handler — static. Replace with fetch() to your email endpoint or Netlify/Forms/EmailJS.
+    function handleForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const status = document.getElementById('formStatus');
+
+      // Basic validation
+      if(!name || (!phone && !email)){
+        status.textContent = "Please include your name and at least one contact method (phone or email).";
+        return;
+      }
+
+      // Note: This is a placeholder. Integrate with server or mail service.
+      status.textContent = "Thanks — your message is ready. To send it, connect this form to your mail backend or paste the details to WhatsApp.";
+      // open whatsapp prefilled message as convenience
+      const waNumber = "918760033444";
+      const waText = encodeURIComponent(`Hello Ajay Arjun Productions,\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}\n\n-- Sent from website contact form`);
+      const waUrl = "https://wa.me/" + waNumber + "?text=" + waText;
+      // show small link to WhatsApp
+      status.innerHTML += ' <a href="' + waUrl + '" target="_blank" rel="noopener noreferrer">Send this on WhatsApp</a>';
+    }
+  </script>
+
+  <!--
+    Instructions to host:
+    - Save this file as index.html, create an 'images/' folder and add:
+      images/mylanchi-poster.jpg, images/photo1.jpg ... photo6.jpg (replace with files you uploaded).
+    - The YouTube embeds use the video IDs discovered online for the audio launch and teaser.
+    - To make the contact form work: connect to Netlify Forms, Formspree, EmailJS, or your own POST endpoint and replace handleForm() accordingly.
+  -->
 
 </body>
 </html>
